@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package.json
+server/server.js
+server/controllers/BooksIndex.js
+src/App.css
+src/App.js
+src/components/Books.js
+src/components/BooksCtrl.js
+src/components/BooksWrapper.js
+src/components/Footer.js
+src/components/Header.js
+src/components/images/bg.png
+src/components/images/bg2.jpg
