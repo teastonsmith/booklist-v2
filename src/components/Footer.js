@@ -5,7 +5,7 @@ export default function Footer() {
         <footer style={footerStyle}>
           <h1>Copyright &copy; 2019 Easton Smith</h1>
           <h2>
-              <a>Home</a>
+              <p>Home</p>
           </h2>
         </footer>
     )
@@ -13,12 +13,13 @@ export default function Footer() {
 
 
 const footerStyle = {
-    background: '#333',
-    fontSize: '10px',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px',
-    position: 'fixed',
-    bottom: '0',
-    width: '100%'
-}
+  background: "#333",
+  backgroundColor: "rgba(0, 0, 0, 0.75)",
+  fontSize: "10px",
+  color: "#fff",
+  textAlign: "center",
+  padding: "10px",
+  position: "fixed",
+  bottom: "0",
+  width: "100%"
+};

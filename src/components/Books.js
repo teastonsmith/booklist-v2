@@ -31,14 +31,16 @@ export class Books extends Component {
     render() {
     return (
       <div>
-        <h1>My book list</h1>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
             alignItems: "center",
-            margin: 40
+            marginTop: 40,
+            marginBottom: 40,
+            marginLeft: "20%",
+            marginRight: "20%"
           }}>
           <input
             type='text'
