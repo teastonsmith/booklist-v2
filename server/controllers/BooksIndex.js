@@ -7,7 +7,8 @@ let index = [
     author: "H.G. Wells",
     genre: "Science Fiction",
     pages: 192,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/30/The_War_of_the_Worlds_first_edition.jpg"
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/The_War_of_the_Worlds_first_edition.jpg"
   },
   {
     id: id++,
@@ -16,6 +17,30 @@ let index = [
     genre: "Young Adult",
     pages: 277,
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/32/Rye_catcher.jpg"
+  },
+  {
+    id: id++,
+    title: "Slaughterhouse-Five",
+    author: "Kurt Vonnegut",
+    genre: "Historical Fiction",
+    pages: 275,
+    imageUrl: "https://images.gr-assets.com/books/1440319389l/4981.jpg"
+  },
+  {
+    id: id++,
+    title: "A Clockwork Orange",
+    author: "Anthony Burgess",
+    genre: "Dystopian Science Fiction",
+    pages: 192,
+    imageUrl: "https://images.gr-assets.com/books/1348339306l/227463.jpg"
+  },
+  {
+    id: id++,
+    title: "Harry Potter and the Goblet of Fire",
+    author: "J.K. Rowling",
+    genre: "Young Adult",
+    pages: 734,
+    imageUrl: "https://images.gr-assets.com/books/1361482611l/6.jpg"
   }
 ];
 

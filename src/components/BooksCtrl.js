@@ -46,33 +46,47 @@ export class BooksCtrl extends Component {
     render() {
         return this.state.edit ? (
           <div>
-            <header>Edit your book:</header>
-            <div>
+            <header
+              style={{ paddingBottom: "10px", fontWeight: "bold" }}>
+              Edit your book:
+            </header>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-evenly",
+                alignItems: "center"
+              }}>
               <input
+                className='editInput'
                 type='text'
                 name='title'
                 value={this.state.title}
                 onChange={this.handleChange}
               />
               <input
+                className='editInput'
                 type='text'
                 name='author'
                 value={this.state.author}
                 onChange={this.handleChange}
               />
               <input
+                className='editInput'
                 type='text'
                 name='genre'
                 value={this.state.genre}
                 onChange={this.handleChange}
               />
               <input
+                className='editInput'
                 type='number'
                 name='pages'
                 value={this.state.pages}
                 onChange={this.handleChange}
               />
               <input
+                className='editInput'
                 type='text'
                 name='imageUrl'
                 value={this.state.imageUrl}
@@ -88,13 +102,15 @@ export class BooksCtrl extends Component {
             </button>
           </div>
         ) : (
-          <div>
+          <div style={{padding: '5px'}}>
             <img src={this.state.imageUrl} alt='' width='150' />
             <p>{this.state.title}</p>
             <p>{this.state.author}</p>
             <p>{this.state.genre}</p>
-            <p>{this.state.pages}</p>
-              <button className='button'onClick={this.handleEditClick}>Edit</button>
+            <p>{this.state.pages + " pages"}</p>
+            <button className='button' onClick={this.handleEditClick}>
+              Edit
+            </button>
           </div>
         );
     }

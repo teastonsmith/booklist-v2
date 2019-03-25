@@ -81,15 +81,17 @@ export class Books extends Component {
             Create Book
           </button>
         </div>
+        <header style={{ marginBottom: '20px', fontSize: '25px', fontWeight: 'bold', textDecoration: 'underline' }}>My Reading List</header>
         {this.props.books.map(book => {
           return (
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                flexDirection: "row",
-                justifyContent: "center"
-              }}>
+            <div style={{
+              // display: 'flex',
+              // flexDirection: 'row',
+              // justifyContent: 'left',
+              // width: '400px',
+              // marginLeft: '10%'
+            }}
+              >
               <BooksCtrl
                 key={book.id}
                 book={book}
