@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export class BooksCtrl extends Component {
     constructor(props) {
-        super(props)
+        super()
 
         this.state = {
             id: props.book.id,
@@ -45,24 +45,58 @@ export class BooksCtrl extends Component {
 
     render() {
         return this.state.edit ? (
+          <div>
+            <header>Edit your book:</header>
             <div>
-                <header>Enter your book</header>
-                <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
-                <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
-                <input type="text" name="genre" value={this.state.genre} onChange={this.handleChange} />
-                <input type="number" name="pages" value={this.state.pages} onChange={this.handleChange} />
-                <input type="text" name="imageUrl" value={this.state.imageUrl} onChange={this.handleChange} />
-                <button onClick={this.handleUpdateClick}>update book info</button>
-                <button onClick={this.handleDeleteClick}>delete book</button>
-                <button onClick={this.handleEditClick}>edit book</button>
+              <input
+                type='text'
+                name='title'
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+              <input
+                type='text'
+                name='author'
+                value={this.state.author}
+                onChange={this.handleChange}
+              />
+              <input
+                type='text'
+                name='genre'
+                value={this.state.genre}
+                onChange={this.handleChange}
+              />
+              <input
+                type='number'
+                name='pages'
+                value={this.state.pages}
+                onChange={this.handleChange}
+              />
+              <input
+                type='text'
+                name='imageUrl'
+                value={this.state.imageUrl}
+                onChange={this.handleChange}
+              />
             </div>
+
+            <button className='button' onClick={this.handleUpdateClick}>
+              Update Info
+            </button>
+            <button className='button' onClick={this.handleDeleteClick}>
+              Delete
+            </button>
+          </div>
         ) : (
-                <div>
-                    <img src={this.props.book.imageUrl} alt='' width='100' />
-                    <p>{this.props.book.title}</p>
-                    <p>{this.props.book.pages}</p>
-                </div>
-            )
+          <div>
+            <img src={this.state.imageUrl} alt='' width='150' />
+            <p>{this.state.title}</p>
+            <p>{this.state.author}</p>
+            <p>{this.state.genre}</p>
+            <p>{this.state.pages}</p>
+              <button className='button'onClick={this.handleEditClick}>Edit</button>
+          </div>
+        );
     }
 }
 

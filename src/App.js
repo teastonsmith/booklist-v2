@@ -19,3 +19,8 @@ class App extends Component {
 }
 
 export default App;
+
+
+//flexbox on list
+//edit does not display updated info
+//css padding/ button styling

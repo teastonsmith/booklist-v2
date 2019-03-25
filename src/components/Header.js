@@ -12,6 +12,9 @@ const headerStyle = {
     background: '#333',
     color: '#fff',
     textAlign: 'center',
-    padding: '10px'
+    position: 'fixed',
+  width: '100%',
+  height: '50px',
+  paddingTop: '10px'
 }
 
