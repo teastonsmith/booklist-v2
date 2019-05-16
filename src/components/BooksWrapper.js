@@ -1,71 +1,81 @@
-import React, { Component } from 'react'
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-import Books from './Books'
+import Books from './Books';
 
+export default class BooksWrapper extends Component {
+	constructor() {
+		super();
 
+		this.state = {
+			books: [],
+		};
+	}
 
-export class BooksWrapper extends Component {
-    constructor() {
-        super()
+	createBook = book => {
+		axios
+			.post('/api/index', book)
+			.then(res => {
+				this.setState({
+					books: res.data,
+				});
+			})
+			.catch(err => {
+				console.log('An error ocurred while creating the book', err);
+			});
+	};
 
-        this.state = {
-            books: []
-        }
-    }
+	componentDidMount() {
+		axios
+			.get('/api/index')
+			.then(res => {
+				this.setState({
+					books: res.data,
+				});
+			})
+			.catch(err => {
+				console.log('An error ocurred while mounting the component', err);
+			});
+	}
 
+	updateBook = book => {
+		axios
+			.put(`/api/index/${book.id}`, book)
+			.then(res => {
+				this.setState({
+					books: res.data,
+				});
+			})
+			.catch(err =>
+				console.log('An error ocurred while updating the book', err),
+			);
+	};
 
-    createBook = book => {
-        axios.post('/api/index', book).then(res => {
-            this.setState({
-                books: res.data
-            })
-        }).catch(err => {
-            console.log('An error occured while creating the book', err)
-        })
-    }
+	deleteBook = id => {
+		axios
+			.delete(`/api/index/${id}`)
+			.then(res => {
+				this.setState({
+					books: res.data,
+				});
+			})
+			.catch(err =>
+				console.log('An error ocurred while deleting the book', err),
+			);
+	};
 
-    componentDidMount() {
-        axios.get('/api/index').then(res => {
-            this.setState({
-                books: res.data
-            })
-        }).catch(err => {
-            console.log('An error occured while mounting the component', err)
-        })
-    }
-
-    updateBook = book => {
-        axios.put(`/api/index/${book.id}`, book).then(res => {
-            this.setState({
-                books: res.data
-            })
-        }).catch(err => console.log('An error occured while updating the book', err))
-    }
-
-    deleteBook = id => {
-        axios.delete(`/api/index/${id}`).then(res => {
-            this.setState({
-                books: res.data
-            })
-        }).catch(err => console.log('An error occured while deleting the book', err))
-    }
-
-
-    render() {
-        return (
-            <div>
-                <div>
-                    <Books
-                        books={this.state.books}
-                        handleCreateBook={this.createBook}
-                        updateBook={this.updateBook}
-                        deleteBook={this.deleteBook} />
-                </div>
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div>
+				<div>
+					<Books
+						books={this.state.books}
+						handleCreateBook={this.createBook}
+						updateBook={this.updateBook}
+						deleteBook={this.deleteBook}
+					/>
+				</div>
+			</div>
+		);
+	}
 }
-
-
-export default BooksWrapper
